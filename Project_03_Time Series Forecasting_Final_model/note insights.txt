@@ -1,0 +1,14 @@
+Perform differencing (seasonal and/or regular) to stationarize the data if necessary.
+1. why we are using 12 value while diffrencing
+
+2. while in bulding model we are fitting on sales data not on diffrenced stationarized data  
+train, test = df['sales'][:train_size], df['sales'][train_size:]
+# Fit SARIMA model on training data
+model = SARIMAX(train, order=(p, d, q), seasonal_order=(P, D, Q, s))
+sarima_result = model.fit()
+
+
+
+
+
+Note: while partianing the data in test data there should atleast 12month or 1year data if quaterly data 4month data there should be in test 
